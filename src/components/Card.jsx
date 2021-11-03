@@ -1,12 +1,13 @@
 import React from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import styles from "./Card.module.css";
 
 export default function Card(props) {
   const { max, min, name, img, onClose, primary } = props;
-  // acá va tu código
+
   return (
-    <div>
-      <span>
+    <div className={styles.card}>
+      <span className={styles.name}>
         {name}
         {!primary && (
           <button onClick={onClose}>
@@ -18,7 +19,7 @@ export default function Card(props) {
         src={`http://openweathermap.org/img/wn/${img}@2x.png`}
         alt="Icono del clima"
       />
-      <div>
+      <div className={styles.temps}>
         <Temp label="Min" temp={min} />
         <Temp label="Max" temp={max} />
       </div>
@@ -26,11 +27,9 @@ export default function Card(props) {
   );
 }
 
-// Mala practica ALERT
-// Esto debería estar en un archivo aparte
 function Temp({ label, temp }) {
   return (
-    <div>
+    <div className={styles.temp}>
       <span>{label}</span>
       <span>{temp}º</span>
     </div>

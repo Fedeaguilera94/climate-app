@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  color: white;
+}
+
+.card > img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.name {
+  background-color: #00000042;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.card + .card {
+  border-left: solid 1px #ffffff80;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.temp + .temp {
+  margin-left: 1rem;
+}
+
+.temps {
+  display: flex;
+}

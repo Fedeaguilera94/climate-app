@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router";
-import "./App.css";
 import SearchBar from "./components/SearchBar";
 import fetchCity from "./services/fetchCity";
 import fetchCoords from "./services/fetchCoords.js";
+import styles from "./App.module.css";
 
 import Card from "./components/Card";
 import Cards from "./components/Cards";
@@ -32,33 +32,38 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Route path="/" render={() => <SearchBar onSearch={onSearch} />} />
+    <div className={styles.app}>
+      <div className={styles.bkg} />
 
-      <div>
-        {data.length > 0 ? (
-          <>
-            <Card
-              primary
-              max={data[data.length - 1].max}
-              min={data[data.length - 1].min}
-              name={data[data.length - 1].name}
-              img={data[data.length - 1].img}
-            />
-            <Cards cities={data} onClose={handleOnClose} />
-          </>
-        ) : (
-          <span
-            style={{
-              textAlign: "center",
-              width: "70vw",
-              marginTop: "1rem",
-              fontSize: "2rem",
-            }}
-          >
-            Agrega una nueva ciudad
-          </span>
-        )}
+      <div className={styles.container}>
+        <Route path="/" render={() => <SearchBar onSearch={onSearch} />} />
+        <div>
+          <div className={styles.citiesC}>
+            {data.length > 0 ? (
+              <>
+                <Card
+                  primary
+                  max={data[data.length - 1].max}
+                  min={data[data.length - 1].min}
+                  name={data[data.length - 1].name}
+                  img={data[data.length - 1].img}
+                />
+                <Cards cities={data} onClose={handleOnClose} />
+              </>
+            ) : (
+              <span
+                style={{
+                  textAlign: "center",
+                  width: "70vw",
+                  marginTop: "1rem",
+                  fontSize: "2rem",
+                }}
+              >
+                Agrega una nueva ciudad
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
