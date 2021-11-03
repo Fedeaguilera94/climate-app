@@ -27,7 +27,7 @@
 
 .app,
 .container {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/bkg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -36,7 +36,7 @@
 .citiesC {
   display: flex;
   height: 20vh;
-  background-color: #ffffff4f;
-  backdrop-filter: blur(3px);
+  background-color: #0f0c0c1e;
+  backdrop-filter: blur(4px);
   justify-content: space-between;
 }

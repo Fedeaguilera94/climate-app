@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState([]);
   function onSearch(ciudad) {
     if (data.length > 2) {
-      alert("no puedes agregar mas ciudades");
+      alert("No puedes agregar mas ciudades");
     } else {
       fetchCity(ciudad, setData);
     }

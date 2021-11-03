@@ -16,6 +16,9 @@ export default function SearchBar({ onSearch }) {
         placeholder="Agregar una ciudad..."
         autoComplete="off"
         value={search}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") handleOnSearch();
+        }}
         onChange={(e) => setSearch(e.target.value)}
       />
       <button className={styles.btn} onClick={handleOnSearch}>
