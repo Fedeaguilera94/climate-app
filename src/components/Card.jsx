@@ -1,17 +1,17 @@
 import React from "react";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { VscChromeClose } from "react-icons/vsc";
 import styles from "./Card.module.css";
 
 export default function Card(props) {
   const { max, min, name, img, onClose, primary } = props;
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${primary ? styles.primary : ""}`}>
       <span className={styles.name}>
         {name}
         {!primary && (
-          <button onClick={onClose}>
-            <IoCloseCircleOutline />
+          <button className={styles.btn} onClick={onClose}>
+            <VscChromeClose />
           </button>
         )}
       </span>

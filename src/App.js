@@ -36,7 +36,9 @@ function App() {
       <div className={styles.bkg} />
 
       <div className={styles.container}>
-        <Route path="/" render={() => <SearchBar onSearch={onSearch} />} />
+        <div>
+          <Route path="/" render={() => <SearchBar onSearch={onSearch} />} />
+        </div>
         <div>
           <div className={styles.citiesC}>
             {data.length > 0 ? (

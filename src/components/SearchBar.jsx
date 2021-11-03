@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar({ onSearch }) {
   const [search, setSearch] = useState("");
@@ -8,14 +10,17 @@ export default function SearchBar({ onSearch }) {
     setSearch("");
   };
   return (
-    <div>
+    <div className={styles.searchBar}>
       <input
-        placeholder="Agrega una ciudad..."
+        className={styles.input}
+        placeholder="Agregar una ciudad..."
         autoComplete="off"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button onClick={handleOnSearch}></button>
+      <button className={styles.btn} onClick={handleOnSearch}>
+        <AiOutlineSearch />
+      </button>
     </div>
   );
 }
